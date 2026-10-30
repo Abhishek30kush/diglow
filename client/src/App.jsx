@@ -8,6 +8,7 @@ import Footer from './components/Footer.jsx';
 import CartDrawer from './components/CartDrawer.jsx';
 import PromotionBanner from './components/PromotionBanner.jsx';
 import CookieConsentBanner from './components/CookieConsentBanner.jsx';
+import FestiveOfferBadge from './components/FestiveOfferBadge.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import CustomerProtectedRoute from './components/CustomerProtectedRoute.jsx';
 
@@ -22,6 +23,7 @@ import OrderSuccess from './pages/OrderSuccess.jsx';
 import TrackOrder from './pages/TrackOrder.jsx';
 import AboutCraft from './pages/AboutCraft.jsx';
 import Contact from './pages/Contact.jsx';
+import Offers from './pages/Offers.jsx';
 import ShippingPolicy from './pages/policies/ShippingPolicy.jsx';
 import ReturnPolicy from './pages/policies/ReturnPolicy.jsx';
 import PrivacyPolicy from './pages/policies/PrivacyPolicy.jsx';
@@ -56,6 +58,7 @@ function CustomerLayout() {
       <Navbar />
       <CartDrawer />
       <CookieConsentBanner />
+      <FestiveOfferBadge />
       <main className="flex-1">
         <Outlet />
       </main>
@@ -102,6 +105,9 @@ export default function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/order-success" element={<OrderSuccess />} />
               <Route path="/track" element={<TrackOrder />} />
+              <Route path="/offers" element={<Offers />} />
+              <Route path="/festive-sale" element={<Offers />} />
+              <Route path="/diwali-offer" element={<Offers />} />
               <Route path="/about" element={<AboutCraft />} />
               <Route path="/contact" element={<Contact />} />
               

@@ -187,6 +187,7 @@ export const api = {
 
   // Promotions & Seasonal Campaign Banners (Phase 7)
   getActivePromotions: () => apiRequest('/promotions/active'),
+  getPublicOffers: () => apiRequest('/promotions/offers'),
   getAdminPromotions: () => apiRequest('/admin/promotions'),
   createPromotion: (data) => apiRequest('/admin/promotions', { method: 'POST', body: data }),
   updatePromotion: (id, data) => apiRequest(`/admin/promotions/${id}`, { method: 'PUT', body: data }),

@@ -108,6 +108,12 @@ export default function Footer() {
             </h5>
             <ul className="space-y-2 text-xs text-cream-200/80">
               <li>
+                <Link to="/offers" className="text-gold-400 font-semibold hover:text-gold-300 transition-colors flex items-center gap-1.5">
+                  <span>🪔 Festive & Diwali Offers</span>
+                  <span className="px-1.5 py-0.2 rounded text-[9px] bg-gold-500/20 text-gold-300 border border-gold-500/40">Save</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/shop" className="hover:text-gold-400 transition-colors">
                   All Candles
                 </Link>

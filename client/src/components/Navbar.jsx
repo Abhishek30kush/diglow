@@ -13,7 +13,8 @@ import {
   LogOut,
   MapPin,
   ChevronDown,
-  Heart
+  Heart,
+  Tag
 } from 'lucide-react';
 import { useCart } from '../context/CartContext.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
@@ -138,6 +139,20 @@ export default function Navbar() {
                 <span>Festive Hampers</span>
                 <span className="px-1.5 py-0.5 text-[10px] uppercase font-bold bg-gold-500 text-burgundy-950 rounded-full">
                   Diwali
+                </span>
+              </Link>
+              <Link
+                to="/offers"
+                className={`transition-colors py-1 flex items-center gap-1.5 ${
+                  isActive('/offers')
+                    ? 'text-burgundy-900 font-semibold border-b-2 border-gold-500'
+                    : 'text-burgundy-800/80 hover:text-burgundy-900'
+                }`}
+              >
+                <Tag className="w-3.5 h-3.5 text-gold-500" />
+                <span>Offers</span>
+                <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold uppercase bg-gradient-to-r from-gold-500 to-amber-600 text-burgundy-950 shadow-sm animate-pulse">
+                  Sale
                 </span>
               </Link>
               <Link
@@ -325,6 +340,19 @@ export default function Navbar() {
               className="block text-base font-medium text-burgundy-900 hover:text-gold-600"
             >
               Festive Gift Hampers
+            </Link>
+            <Link
+              to="/offers"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between text-base font-semibold text-burgundy-900 hover:text-gold-600"
+            >
+              <span className="flex items-center gap-2">
+                <Tag className="w-4 h-4 text-gold-500" />
+                <span>Diwali & Festive Offers</span>
+              </span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-gold-500 text-burgundy-950">
+                Offers 🪔
+              </span>
             </Link>
             <Link
               to="/about"

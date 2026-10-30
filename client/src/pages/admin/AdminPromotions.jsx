@@ -305,6 +305,74 @@ export default function AdminPromotions() {
               </button>
             </div>
 
+            {/* Quick Festive Templates */}
+            {!editingBanner && (
+              <div className="bg-amber-50/70 p-3 rounded-2xl border border-gold-500/30 space-y-2">
+                <span className="text-[11px] font-serif font-bold text-burgundy-950 flex items-center gap-1.5">
+                  <span>🪔 Quick Festive Templates (Click to Auto-fill)</span>
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData({
+                        ...formData,
+                        title: 'Deepavali Grand Illumination Sale & Royal Hampers',
+                        subtitle: 'Flat 20% Off on all Festive Hampers + Free Solid Brass Snuffer above ₹1,999',
+                        badge: 'DIWALI SPECIAL',
+                        couponCode: 'DIWALI20',
+                        linkUrl: '/offers',
+                        bgGradient: 'from-burgundy-950 via-burgundy-900 to-amber-950',
+                        priority: 25,
+                        isActive: true
+                      })
+                    }
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-gold-500/50 hover:bg-gold-50 text-burgundy-900 transition-colors shadow-xs"
+                  >
+                    🪔 Diwali 20% Off
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData({
+                        ...formData,
+                        title: 'Festive Artisanal Scented Candles Celebration',
+                        subtitle: 'Use code FESTIVE10 for 10% instant off on all Handcrafted Soy Candles',
+                        badge: 'FESTIVE EDIT',
+                        couponCode: 'FESTIVE10',
+                        linkUrl: '/shop?category=Festive%20Hampers',
+                        bgGradient: 'from-amber-950 via-burgundy-950 to-rose-950',
+                        priority: 15,
+                        isActive: true
+                      })
+                    }
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-gold-500/50 hover:bg-gold-50 text-burgundy-900 transition-colors shadow-xs"
+                  >
+                    ✨ Festive 10% Off
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData({
+                        ...formData,
+                        title: 'Royal Heirloom Brass Urli & Velvet Gifting',
+                        subtitle: 'Complimentary Handwritten Calligraphy Card & Free Express Shipping',
+                        badge: 'LIMITED EDITION',
+                        couponCode: 'ROYALGLOW',
+                        linkUrl: '/offers',
+                        bgGradient: 'from-burgundy-950 via-amber-950 to-yellow-950',
+                        priority: 10,
+                        isActive: true
+                      })
+                    }
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-gold-500/50 hover:bg-gold-50 text-burgundy-900 transition-colors shadow-xs"
+                  >
+                    🎁 Royal Brass Urli
+                  </button>
+                </div>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-4 text-xs">
               <div>
                 <label className="block font-semibold text-burgundy-950 mb-1">

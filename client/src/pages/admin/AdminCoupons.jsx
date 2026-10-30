@@ -345,6 +345,74 @@ export default function AdminCoupons() {
               </div>
             )}
 
+            {/* Quick Festive Coupon Presets */}
+            {!editingCoupon && (
+              <div className="bg-amber-50/70 p-3 rounded-2xl border border-gold-500/30 space-y-2">
+                <span className="text-[11px] font-serif font-bold text-burgundy-950">
+                  🪔 Festive Coupon Presets (Click to Auto-fill):
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData({
+                        code: 'DIWALI20',
+                        description: '20% Grand Diwali Festive Discount on Hampers & Orders over ₹1,999',
+                        discountType: 'PERCENTAGE',
+                        discountValue: '20',
+                        minOrderAmount: '1999',
+                        maxDiscountAmount: '1000',
+                        usageLimit: '500',
+                        endDate: '',
+                        isActive: true
+                      })
+                    }
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-gold-500/50 hover:bg-gold-50 text-burgundy-900 transition-colors shadow-xs"
+                  >
+                    DIWALI20 (20% Off)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData({
+                        code: 'FESTIVE10',
+                        description: 'Flat 10% Festive Savings across all handcrafted candles',
+                        discountType: 'PERCENTAGE',
+                        discountValue: '10',
+                        minOrderAmount: '999',
+                        maxDiscountAmount: '500',
+                        usageLimit: '1000',
+                        endDate: '',
+                        isActive: true
+                      })
+                    }
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-gold-500/50 hover:bg-gold-50 text-burgundy-900 transition-colors shadow-xs"
+                  >
+                    FESTIVE10 (10% Off)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData({
+                        code: 'ROYALGLOW',
+                        description: 'Flat ₹300 Off on Luxury Orders over ₹2,499',
+                        discountType: 'FIXED',
+                        discountValue: '300',
+                        minOrderAmount: '2499',
+                        maxDiscountAmount: '',
+                        usageLimit: '300',
+                        endDate: '',
+                        isActive: true
+                      })
+                    }
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-gold-500/50 hover:bg-gold-50 text-burgundy-900 transition-colors shadow-xs"
+                  >
+                    ROYALGLOW (₹300 Off)
+                  </button>
+                </div>
+              </div>
+            )}
+
             <form onSubmit={handleFormSubmit} className="space-y-4 text-xs">
               <div>
                 <label className="block font-semibold text-burgundy-900 mb-1">Coupon Code *</label>

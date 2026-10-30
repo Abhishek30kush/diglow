@@ -181,3 +181,75 @@ export async function deletePromotion(req, res, next) {
     next(error);
   }
 }
+
+/**
+ * Public: Get comprehensive active festive offers, coupons & festive products
+ */
+export async function getPublicOffers(req, res, next) {
+  try {
+    const now = new Date();
+
+    // 1. Active Banners
+    const banners = await prisma.promotionBanner.findMany({
+      where: {
+        isActive: true,
+        startDate: { lte: now },
+        OR: [
+          { endDate: null },
+          { endDate: { gte: now } }
+        ]
+      },
+      orderBy: [
+        { priority: 'desc' },
+        { createdAt: 'desc' }
+      ]
+    });
+
+    // 2. Active Coupons
+    const coupons = await prisma.coupon.findMany({
+      where: {
+        isActive: true,
+        startDate: { lte: now },
+        OR: [
+          { endDate: null },
+          { endDate: { gte: now } }
+        ]
+      },
+      select: {
+        id: true,
+        code: true,
+        description: true,
+        discountType: true,
+        discountValue: true,
+        minOrderAmount: true,
+        maxDiscountAmount: true,
+        endDate: true
+      },
+      orderBy: { minOrderAmount: 'asc' }
+    });
+
+    // 3. Featured Festive Specials & Hampers
+    const festiveProducts = await prisma.product.findMany({
+      where: {
+        isActive: true,
+        OR: [
+          { isFestiveSpecial: true },
+          { category: 'Festive Hampers' }
+        ]
+      },
+      include: {
+        variants: true
+      },
+      take: 6
+    });
+
+    res.json({
+      success: true,
+      banners,
+      coupons,
+      festiveProducts
+    });
+  } catch (error) {
+    next(error);
+  }
+}
