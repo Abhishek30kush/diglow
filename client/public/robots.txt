@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /cart
+Disallow: /checkout
+Disallow: /order-success
+Disallow: /account
+Disallow: /account/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Sitemap: https://diglow.com/sitemap.xml

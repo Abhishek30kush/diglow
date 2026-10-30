@@ -1,0 +1,25 @@
+{
+  "name": "diglow-candle-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DiGlow Candle Store - Luxury Indian Candle & Festive Gifting E-commerce Platform",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "db:generate": "npm run db:generate --prefix server",
+    "db:migrate": "npm run db:migrate --prefix server",
+    "db:migrate:deploy": "npm run db:migrate:deploy --prefix server",
+    "db:seed": "npm run db:seed --prefix server",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "start:server": "npm run start --prefix server",
+    "worker:cart": "npm run worker:cart --prefix server",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"magenta,cyan\" \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "npm run build --prefix client",
+    "build": "npm run build:client",
+    "test:server": "npm run test --prefix server",
+    "test": "npm run test:server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
