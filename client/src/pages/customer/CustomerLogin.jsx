@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Flame, Lock, Mail, User, Phone, Sparkles, ArrowRight } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext.jsx';
 
@@ -197,15 +197,6 @@ export default function CustomerLogin() {
             )}
           </button>
         </form>
-
-        <div className="pt-4 border-t border-cream-200 text-center space-y-2">
-          <p className="text-[11px] text-burgundy-800/60">
-            Looking for Store Administration?{' '}
-            <Link to="/admin/login" className="text-gold-600 font-semibold hover:underline">
-              Admin Login &rarr;
-            </Link>
-          </p>
-        </div>
       </div>
     </div>
   );
